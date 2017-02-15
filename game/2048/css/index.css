@@ -1,0 +1,136 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(250, 248, 239);
+	font-family: arial,"microsoft yahei";
+}
+
+#box {
+	width: 496px;
+	height: 500px;
+	border-radius: 8px;
+	background-color: rgb(187, 173, 160);
+	margin: 0 auto;
+	position: relative;
+}
+
+.div {
+	background-color: rgb(205, 193, 180);
+	width: 105px;
+	height: 105px;
+	border-radius: 4px;
+	position: absolute;
+	top: 0;
+	/*transition: all .5s;*/
+}
+
+.divbox {
+	margin-left: 15px;
+}
+
+#div1 div {
+	top: 15px;
+}
+
+#div2 div {
+	top: 135px;
+}
+
+#div3 div {
+	top: 255px;
+}
+
+#div4 div {
+	top: 375px;
+}
+
+.divbox div:nth-child(2) {
+	left: 135px;
+}
+
+.divbox div:nth-child(3) {
+	left: 255px;
+}
+
+.divbox div:nth-child(4) {
+	left: 375px;
+}
+
+.num {
+	background-color: rgb(238, 228, 218);
+	color: rgb(119, 110, 101);
+	font-size: 3.5em;
+	line-height: 105px;
+	text-align: center;
+	font-weight: bolder;
+	/*transition: all .3s;*/
+}
+
+.title {
+	font-size: 2em;
+	color: rgb(119, 110, 101);
+	font-weight: bold;
+	margin: 0 auto;
+	width: 496px;
+}
+
+#btn {
+	width: 496px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	position: relative;
+	height: 55px;
+}
+
+#again {
+	color: white;
+	font-weight: bolder;
+	font-size: 17px;
+	width: 90px;
+	height: 38px;
+	border-radius: 6px;
+	line-height: 40px;
+	text-align: center;
+	background-color: rgb(143, 122, 102);
+	position: absolute;
+	bottom: 0;
+	cursor: pointer;
+}
+
+#score {
+	background-color: rgb(183, 173, 160);
+	width: 65px;
+	height: 55px;
+	position: absolute;
+	top: 0;
+	left: 310px;
+	border-radius: 6px;
+	color: white;
+	font-weight: bolder;
+	text-align: center;
+}
+
+.word1 {
+	color: rgb(238, 228, 218);
+	font-size: 14px;
+	margin-top: 4px;
+	display: inline-block;
+}
+
+#count {
+	font-size: 25px;
+}
+
+#record {
+	background-color: rgb(183, 173, 160);
+	width: 120px;
+	height: 55px;
+	position: absolute;
+	top: 0;
+	left: 380px;
+	border-radius: 6px;
+	color: white;
+	font-size: 20px;
+	font-weight: bolder;
+	text-align: center;
+}
