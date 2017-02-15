@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Todo list</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body ng-app="todoApp" ng-controller="todoCtrl">
+		<header>
+			<h3 ng-bind="app.name"></h3>
+		</header>
+		<main>
+			<form ng-submit="submitData()">
+				<input ng-model="content" type="text" class="form-control" placeholder="input something to do..."/>
+				<div class="checkbox ov-h">
+					<label><input type="checkbox" ng-model="ckall" ng-click="checkAll()"/>选中所有</label>
+					<input type="submit" value="发布" class="btn btn-xs btn-info fr"/>
+				</div>
+			</form>
+			<!--筛选按钮-->
+			<div class="btn-toolbar">
+				<div class="btn-group btn-group-xs">
+					<div class="btn btn-default" ng-click="prop='';desc=!desc">默认</div>
+					<div class="btn btn-default" ng-click="prop='time';desc=!desc">时间</div>
+					<div class="btn btn-default" ng-click="prop='weight';desc=!desc">权重</div>
+					<div class="btn btn-default" ng-click="prop='content';desc=!desc">内容</div>
+				</div>
+				<div class="btn-group btn-group-xs">
+					<div class="btn btn-default" ng-click="ckval=''">全部</div>
+					<div class="btn btn-default" ng-click="ckval=true">已完成</div>
+					<div class="btn btn-default" ng-click="ckval=false">未完成</div>
+				</div>
+			</div>
+			<!--数据-->
+			<div><ul>
+				<!--处理简单数据重复的问题   track by $index-->
+				<li class="item" ng-repeat="item in datas | filter:{done:ckval} | orderBy:prop:desc">
+					<div class="colorbtn">
+						<span ng-click="item.weight=1;refreshData(item);"></span>
+						<span ng-click="item.weight=2;refreshData(item);"></span>
+						<span ng-click="item.weight=3;refreshData(item);"></span>
+						<span ng-click="item.weight=4;refreshData(item);"></span>
+					</div>
+					<div class="checkbox bgc{{item.weight}}">
+						<label>
+							<input type="checkbox" ng-model="item.done" ng-click="refreshData(item);"/>
+							<span class="cont" ng-bind="item.content" ></span>
+							<span class="fr" ng-bind="item.time | date:'yyyy-MM-dd HH:mm:ss'"></span>
+						</label>
+						<span class="glyphicon glyphicon-remove fr" ng-click="removeData(item)"></span>
+					</div>
+				</li>
+			</ul></div>
+			<!--显示未完成项-->
+			<footer id="footer">
+				<span class="label label-danger" ng-bind="getNofinish()"></span>
+				<span>项未完成</span>
+			</footer>
+		</main>
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-animate.min.js"></script>
+		<script src="js/app.js" ></script>
+	</body>
+</html>

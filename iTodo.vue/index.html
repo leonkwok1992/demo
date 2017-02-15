@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Todo list</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<header>
+			<h3></h3>
+		</header>
+		<main>
+			<form>
+				<input type="text" class="form-control" placeholder="input something to do..."/>
+				<div class="checkbox ov-h">
+					<label><input type="checkbox" />选中所有</label>
+					<input type="submit" value="发布" class="btn btn-xs btn-info fr"/>
+				</div>
+			</form>
+			<!--筛选按钮-->
+			<div class="btn-toolbar">
+				<div class="btn-group btn-group-xs">
+					<div class="btn btn-default" >默认</div>
+					<div class="btn btn-default" >时间</div>
+					<div class="btn btn-default" >权重</div>
+					<div class="btn btn-default" >内容</div>
+				</div>
+				<div class="btn-group btn-group-xs">
+					<div class="btn btn-default" >全部</div>
+					<div class="btn btn-default" >已完成</div>
+					<div class="btn btn-default" >未完成</div>
+				</div>
+			</div>
+			<!--数据-->
+			<div><ul>
+				<!--处理简单数据重复的问题   track by $index-->
+				<li class="item" >
+					<div class="colorbtn">
+						<span ></span>
+						<span ></span>
+						<span ></span>
+						<span ></span>
+					</div>
+					<div class="checkbox bgc1">
+						<label>
+							<input type="checkbox" />
+							<span class="cont" ></span>
+							<span class="fr" ></span>
+						</label>
+						<span class="glyphicon glyphicon-remove fr"></span>
+					</div>
+				</li>
+			</ul></div>
+			<!--显示未完成项-->
+			<footer id="footer">
+				<span class="label label-danger" ></span>
+				<span>项未完成</span>
+			</footer>
+		</main>
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

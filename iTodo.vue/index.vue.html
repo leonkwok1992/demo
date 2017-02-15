@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Todo list</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<h3 v-text="app.appName"></h3>
+			</header>
+			<main>
+				<form @submit.prevent="submitItem">
+					<input type="text" class="form-control" placeholder="input something to do..." v-model="cont"/>
+					<div class="checkbox ov-h">
+						<input type="button" value="全设为完成" class="btn btn-xs btn-warning" @click="checkAll"/>
+						<input type="submit" value="发布" class="btn btn-xs btn-info fr"/>
+					</div>
+				</form>
+				<!--筛选按钮-->
+				<div class="btn-toolbar">
+					<div class="btn-group btn-group-xs">
+						<div class="btn btn-default" @click="order='time';">时间</div>
+						<div class="btn btn-default" @click="order='weight';">权重</div>
+						<div class="btn btn-default" @click="order='cont';">内容</div>
+					</div>
+					<div class="btn-group btn-group-xs">
+						<div class="btn btn-default" @click="query=''">全部</div>
+						<div class="btn btn-default" @click="query=true">已完成</div>
+						<div class="btn btn-default" @click="query=false">未完成</div>
+					</div>
+				</div>
+				<!--数据-->
+				<div><ul>
+					<!--自定义组件-->
+					<!--通过v-bind将对象数据传递到组件内，:key是设置每项数据的键值，防止一些BUG-->
+					<todoitem v-for="item in itemsByCalu" v-bind:i="item" :key="item.id"></todoitem>
+				</ul></div>
+				<!--显示未完成项-->
+				<footer id="footer">
+					<span class="label label-danger" v-text="itemsDoneCount"></span>
+					<span>项未完成</span>
+				</footer>
+			</main>
+		</div>
+		
+		<!--列表块组件-->
+		<template id="todoitem1">
+			<li class="item">
+				<div class="colorbtn">
+					<span @click="changeProp('weight',1)"></span>
+					<span @click="changeProp('weight',2)"></span>
+					<span @click="changeProp('weight',3)"></span>
+					<span @click="changeProp('weight',4)"></span>
+				</div>
+				<div :class="i.weight | checkClass">
+					<label>
+						<input type="checkbox" v-model="i.done" @click="changeProp('done',!i.done)"/>
+						<span class="cont" v-text="i.cont"></span>
+						<span class="fr">{{i.time | time}}</span>
+					</label>
+					<span class="glyphicon glyphicon-remove fr" @click="removeItem(i)"></span>
+				</div>
+			</li>
+		</template>
+		<script src="js/fastclick.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+		        FastClick.attach(document.body);
+		    }, false);
+		</script>
+		<script src="js/lodash.min.js"></script>
+		<script src="js/vue.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>

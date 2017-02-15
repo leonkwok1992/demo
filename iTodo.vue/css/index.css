@@ -1,0 +1,85 @@
+html,body{
+	width: 100%;
+}
+header{
+	width: 100%;
+	height: 44px;
+	background-color: #fafafa;
+	box-shadow: 0 2px 10px darkgray;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;/*标签设置定位后可以修改z轴：值越大越靠近屏幕*/
+}
+header h3{
+	margin: 0;
+	line-height: 44px;/*垂直居中*/
+}
+main{
+	margin-top: 44px;
+	padding: 20px;
+}
+.item{
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 10px 0;
+}
+.item .colorbtn{
+	display: flex;
+	display: -webkit-flex;
+	height: 10px;
+}
+.colorbtn>span{ flex: 1 1 auto; }
+.colorbtn>span:nth-child(1){background-color: #3A87AD;}
+.colorbtn>span:nth-child(2){background-color: #468847;}
+.colorbtn>span:nth-child(3){background-color: #C09853;}
+.colorbtn>span:nth-child(4){background-color: #B94A48;}
+
+.item .checkbox{
+	margin: 0;
+	padding: 15px 10px;
+	overflow: hidden;
+}
+.item .checkbox label{
+	width: calc(100% - 20px);
+}
+.item .checkbox .glyphicon{
+    position: absolute;
+    height: 16px;
+    top: auto;
+    bottom: 16px;
+    right: 10px;
+	color: #666;
+}
+.item .checkbox .cont{
+	display: inline-block;
+	max-width: 100%;
+	word-break: break-word;
+}
+.item .checkbox.bgc1{ background-color: #D9EDF6;color:#3A87AD;}
+.item .checkbox.bgc2{ background-color: #DEF0D8;color:#468847;}
+.item .checkbox.bgc3{ background-color: #FDF8E4;color:#C09853;}
+.item .checkbox.bgc4{ background-color: #F2DEDE;color:#B94A48;}
+
+#footer{
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;/*交叉轴方向居中*/
+}
+#footer .label{
+	line-height: 1.2;
+}
+/*OOCSS*/
+.ov-h{ overflow: hidden; }
+.fr{ float: right; }
+
+/*angular animate*/
+.item.ng-enter{
+	animation: fadeInRight 0.5s;
+}
+.item.ng-leave{
+	animation: fadeOutRight 0.5s;
+}
