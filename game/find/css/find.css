@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #d74040;
+  width: 100%;
+  overflow: hidden;
+  font-family: "微软雅黑" "黑体";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  transition: 0.1s;
+}
+#main {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  font-size: 25px;
+  line-height: 25px;
+  text-align: center;
+}
+#main #time {
+  margin: 15px;
+}
+#main #score {
+  margin: 15px;
+}
+#main #btn {
+  background-color: deepskyblue;
+  color: #FFFFFF;
+  width: 150px;
+  height: 35px;
+  margin: 1px auto;
+  line-height: 35px;
+  visibility: visible;
+}
+#main #btn:active {
+  background-color: darkblue;
+}
+#main #show {
+  width: 80%;
+  margin: 20px auto;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#main #show div {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: dodgerblue;
+  float: left;
+  margin: 2px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+#main #show .img1 {
+  background-image: url(../img/1.png);
+}
+#main #show .img2 {
+  background-image: url(../img/2.png);
+}
+#finish {
+  width: 100%;
+  background-color: rgba(90, 90, 90, 0.6);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  display: none;
+}
+#finish p {
+  color: #fff;
+  font-size: 35px;
+  line-height: 40px;
+}
+#finish #restart {
+  background-color: deepskyblue;
+  color: #FFFFFF;
+  width: 150px;
+  height: 35px;
+  margin: 45px auto;
+  line-height: 35px;
+  visibility: visible;
+}
+/*# sourceMappingURL=find.css.map */

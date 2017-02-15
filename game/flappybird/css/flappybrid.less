@@ -1,0 +1,201 @@
+@bgcolor: #6fc6cd;
+.tf(@value){
+    transform: @value;
+    -ms-transform: @value;
+    -moz-transform: @value;
+    -webkit-transform: @value;
+}
+.ts(@value){
+    -webkit-transition: @value;
+    -moz-transition: @value;
+    -ms-transition: @value;
+    transition: @value;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-size:12px;
+    font-family: arial;
+    margin: 0;
+    padding: 0;
+    background-color: @bgcolor;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: none;
+    vertical-align: top;
+}
+
+#start{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .title{
+        position: absolute;
+        top:25%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        >img{
+            vertical-align: middle;
+        }
+    }
+    #startbtn{
+        position: absolute;
+        width: 85px;
+        height: 29px;
+        background: url(../img/start.jpg);
+        bottom: 25%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 10;
+    }
+}
+#game{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    #score{
+        position: absolute;
+        top: 10%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        z-index: 11;
+    }
+    #bird{
+        width: 34px;
+        height: 24px;
+        left: 18%;
+        position: absolute;
+        top: 40%;
+        z-index: 11;
+        background-image: url(../img/b1.gif);
+        background-position: -6px -13px;
+    }
+    .birdMove{
+        .ts(transform 0.4s linear);  
+        .tf(rotate(0deg)) !important;
+    }
+    .birdUp{
+        .ts(transform 0.2s linear);
+        .tf(rotate(-35deg)) !important;
+    }
+    .birdDown{
+        .ts( transform 1s ease-in);
+        .tf(rotate(90deg)) !important;
+    }
+    .pipe{
+        width: 62px;
+        position: absolute;
+        bottom: 65px;
+        z-index: 10;
+        transition: left;
+        left: 100%;
+        >div,>img{
+            width: 62px;
+            position: absolute;
+            top:0px
+        }
+        .up{
+            background: url(../img/pmod_up.png);
+        }
+        .dp{
+            background: url(../img/pmod_down.png);
+        }
+    }
+}
+
+#over{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    z-index: 15;
+    .bar{
+        width: 269px;
+        height: 135px;
+        background-image: url(../img/message.jpg);
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: -135px;
+        >p{
+            color: #fff;
+            font-family: "microsoft yahei";
+            font-size: 25px;
+            text-align: right;
+            margin-right: 25px;
+        }
+        >p:nth-child(1){
+            margin-top: 32px;
+            margin-bottom: 20px;
+        }  
+        >p:nth-child(2){
+            margin-top: 16px;
+        }
+    }
+    .baranimate{
+        .tf(translate3d(0, 250px, 0));
+        transition: all 1s;
+    }
+    #okbtn{
+        position: absolute;
+        width: 87px;
+        height: 30px;
+        background: url(../img/ok.jpg);
+        background-size: 100% 100%;
+        bottom: -33px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .btnanimate{
+        .tf(translate3d(0, -160px, 0));
+        transition: all 0.8s ;
+    }
+}
+
+.footer{
+    width: 100%;
+    position: fixed;
+}
+.footer_city{
+    height: 100px;
+    bottom: 65px;
+    >.city{
+       width: 100%;
+       height: 100%;
+       position: absolute;
+       left: 0px;
+       background: url(../img/city.jpg);
+    }
+}
+
+.footer_banner{
+    height: 21px;
+    bottom: 44px;
+    z-index: 12;
+    >.banner{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        background: url(../img/banner.jpg);
+    }
+}
+footer{
+    height: 44px;
+    bottom: 0;
+    background: url(../img/bbg.jpg);
+}

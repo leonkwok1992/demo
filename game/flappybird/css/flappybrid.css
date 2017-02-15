@@ -1,0 +1,210 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-size: 12px;
+  font-family: arial;
+  margin: 0;
+  padding: 0;
+  background-color: #6fc6cd;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: none;
+  vertical-align: top;
+}
+#start {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#start .title {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+#start .title > img {
+  vertical-align: middle;
+}
+#start #startbtn {
+  position: absolute;
+  width: 85px;
+  height: 29px;
+  background: url(../img/start.jpg);
+  bottom: 25%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+}
+#game {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#game #score {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  z-index: 11;
+}
+#game #bird {
+  width: 34px;
+  height: 24px;
+  left: 18%;
+  position: absolute;
+  top: 40%;
+  z-index: 11;
+  background-image: url(../img/b1.gif);
+  background-position: -6px -13px;
+}
+#game .birdMove {
+  -webkit-transition: transform 0.4s linear;
+  -moz-transition: transform 0.4s linear;
+  -ms-transition: transform 0.4s linear;
+  transition: transform 0.4s linear;
+  transform: rotate(0deg) !important;
+  -ms-transform: rotate(0deg) !important;
+  -moz-transform: rotate(0deg) !important;
+  -webkit-transform: rotate(0deg) !important;
+}
+#game .birdUp {
+  -webkit-transition: transform 0.2s linear;
+  -moz-transition: transform 0.2s linear;
+  -ms-transition: transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transform: rotate(-35deg) !important;
+  -ms-transform: rotate(-35deg) !important;
+  -moz-transform: rotate(-35deg) !important;
+  -webkit-transform: rotate(-35deg) !important;
+}
+#game .birdDown {
+  -webkit-transition: transform 1s ease-in;
+  -moz-transition: transform 1s ease-in;
+  -ms-transition: transform 1s ease-in;
+  transition: transform 1s ease-in;
+  transform: rotate(90deg) !important;
+  -ms-transform: rotate(90deg) !important;
+  -moz-transform: rotate(90deg) !important;
+  -webkit-transform: rotate(90deg) !important;
+}
+#game .pipe {
+  width: 62px;
+  position: absolute;
+  bottom: 65px;
+  z-index: 10;
+  transition: left;
+  left: 100%;
+}
+#game .pipe > div,
+#game .pipe > img {
+  width: 62px;
+  position: absolute;
+  top: 0px;
+}
+#game .pipe .up {
+  background: url(../img/pmod_up.png);
+}
+#game .pipe .dp {
+  background: url(../img/pmod_down.png);
+}
+#over {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 15;
+}
+#over .bar {
+  width: 269px;
+  height: 135px;
+  background-image: url(../img/message.jpg);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -135px;
+}
+#over .bar > p {
+  color: #fff;
+  font-family: "microsoft yahei";
+  font-size: 25px;
+  text-align: right;
+  margin-right: 25px;
+}
+#over .bar > p:nth-child(1) {
+  margin-top: 32px;
+  margin-bottom: 20px;
+}
+#over .bar > p:nth-child(2) {
+  margin-top: 16px;
+}
+#over .baranimate {
+  transform: translate3d(0, 250px, 0);
+  -ms-transform: translate3d(0, 250px, 0);
+  -moz-transform: translate3d(0, 250px, 0);
+  -webkit-transform: translate3d(0, 250px, 0);
+  transition: all 1s;
+}
+#over #okbtn {
+  position: absolute;
+  width: 87px;
+  height: 30px;
+  background: url(../img/ok.jpg);
+  background-size: 100% 100%;
+  bottom: -33px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+#over .btnanimate {
+  transform: translate3d(0, -160px, 0);
+  -ms-transform: translate3d(0, -160px, 0);
+  -moz-transform: translate3d(0, -160px, 0);
+  -webkit-transform: translate3d(0, -160px, 0);
+  transition: all 0.8s;
+}
+.footer {
+  width: 100%;
+  position: fixed;
+}
+.footer_city {
+  height: 100px;
+  bottom: 65px;
+}
+.footer_city > .city {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  background: url(../img/city.jpg);
+}
+.footer_banner {
+  height: 21px;
+  bottom: 44px;
+  z-index: 12;
+}
+.footer_banner > .banner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  background: url(../img/banner.jpg);
+}
+footer {
+  height: 44px;
+  bottom: 0;
+  background: url(../img/bbg.jpg);
+}
+/*# sourceMappingURL=flappybrid.css.map */

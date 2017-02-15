@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-image: url(../img/bg.jpg);
+	background-repeat: repeat;
+	font-family: "微软雅黑" "黑体";
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+#gamebg {
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/game_bg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: none;
+}
+#gamebg #score {
+	left: 20%;
+	top: 2.3%;
+	position: absolute;
+	color: #69d3ff;
+	font-weight: bold;
+}
+#gamebg #time {
+	width: 56.25%;
+	height: 3.6%;
+	top: 13.6%;
+	left: 19.65%;
+	position: absolute;
+	overflow: hidden;
+}
+#gamebg #time #timebar {
+	height: 100%;
+	transition: all 0.01s;
+}
+#gamebg #show {
+	width: 100%;
+	background: rgba(200, 200, 200, 0.2);
+}
+#gamebg #show .hold {
+	width: 33.75%;
+	height: 21.04167%;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: 1000% 100%;
+}
+#gamebg #show .pos1 {
+	left: 6%;
+	top: 33.4%;
+}
+#gamebg #show .pos2 {
+	left: 31%;
+	top: 23.95%;
+}
+#gamebg #show .pos3 {
+	left: 59%;
+	top: 29.6%;
+}
+#gamebg #show .pos4 {
+	left: 6%;
+	top: 46%;
+}
+#gamebg #show .pos5 {
+	left: 33%;
+	top: 40%;
+}
+#gamebg #show .pos6 {
+	left: 63%;
+	top: 44%;
+}
+#gamebg #show .pos7 {
+	left: 10%;
+	top: 61.1%;
+}
+#gamebg #show .pos8 {
+	left: 38%;
+	top: 57%;
+}
+#gamebg #show .pos9 {
+	left: 66%;
+	top: 61.5%;
+}
+#gamebg #start {
+	width: 34.375%;
+	height: 8.33333%;
+	background-color: #D74040;
+	color: #fff;
+	text-align: center;
+	position: absolute;
+	top: 41.6667%;
+	left: 32.8125%;
+}
+#gamebg #finish {
+	width: 62.5%;
+	height: 27%;
+	top: 36.5%;
+	left: 18.75%;
+	position: absolute;
+	text-align: center;
+	background-color: #1E90FF;
+	color: #FFFFFF;
+	border: solid 3px rgba(255, 255, 255, 0.6);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	border-radius: 10px;
+	display: none;
+}
+#gamebg #finish p {
+	margin-top: 5%;
+}
+#gamebg #finish #restart {
+	width: 50%;
+	height: 20%;
+	background: brown;
+	margin: 15% auto 0;
+}
+#loading {
+	width: 100%;
+	padding-top: 46%;
+	text-align: center;
+	color: #FFF;
+	font-size: 50px;
+}
+/*# sourceMappingURL=wolf.css.map */
